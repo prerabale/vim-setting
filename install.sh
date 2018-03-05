@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if [ ! -d "~/.vim/bundle/Vundle.vim" ]; then
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 vim -c 'PluginInstall' -c 'qa!'
 
@@ -165,6 +163,8 @@ let g:syntastic_loc_list_height = 5          \" 错误提示窗口的高度
 let g:syntastic_enable_highlighting = 0
 let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim'] }
 \"\"}}
-">~/.vimrc<<EOF
+">~/.vimrc
 
 echo "finish. have fun!"
+
+<<EOF
