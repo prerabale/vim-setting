@@ -167,4 +167,4 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim'] }
 \"\"}}
 ">~/.vimrc<<EOF
 
-# ~/.vim/bundle/YouCompleteMe/install.py
+echo "finish. have fun!"
