@@ -1,6 +1,12 @@
 #!/bin/bash
 
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ -d $HOME/.vim/bundle/Vundle.vim ]
+then
+  echo 'Vundle.vim exist, skip...'
+else
+  echo 'start to clone Vundle.vim...'
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 
 vim -c 'PluginInstall' -c 'qa!'
 
