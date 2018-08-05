@@ -4,8 +4,25 @@ if [ -d $HOME/.vim/bundle/Vundle.vim ]
 then
   echo 'Vundle.vim exist, skip...'
 else
+  if command -v git >/dev/null 2>&1; then
+    echo "git is installed"
+  else
+    echo 'git installing'
+    if command -v yum >/dev/null 2>&1; then
+      yum install git-core || { echo "install git failure"; exit -1; }
+      echo "git installed successfully!"
+    elif command -v apt-get >/dev/null 2>&1; then
+      apt-get update
+      apt-get install git || { echo "install git failure"; exit -1; }
+      echo "git installed successfully!"
+    else
+      echo "pls install git first"
+      exit -1
+    fi
+  fi
   echo 'start to clone Vundle.vim...'
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim || { echo "install Vundle failure";
+exit -1; }
 fi
 
 vim -c 'PluginInstall' -c 'qa!'
@@ -172,5 +189,3 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim'] }
 ">~/.vimrc
 
 echo "finish. have fun!"
-
-<<EOF
