@@ -5,10 +5,10 @@
 ### wget
 
 ```bash
-wget https://github.com/prerabale/vim-setting/raw/master/install.sh -O - | sh
+wget -qO- https://raw.githubusercontent.com/prerabale/vim-setting/master/install.sh | bash
 ```
 ### curl
 
 ```bash
-curl -o- https://github.com/prerabale/vim-setting/raw/master/install.sh | bash
+curl -o- https://raw.githubusercontent.com/prerabale/vim-setting/master/install.sh | bash
 ```
