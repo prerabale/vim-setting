@@ -100,36 +100,31 @@ let g:Powerline_symbols = 'unicode'
 """""""""" Vundle配置{{
 set nocompatible                             " 自动删除不需要的插件
 filetype off
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
-" let Vundle manage Vundle, required
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tomasr/molokai'                      " 配色方案
-Plugin 'Valloric/YouCompleteMe'              " YCM安装完成之后还需要进行编译，一切的基础
-Plugin 'marijnh/tern_for_vim'                " 配合YCM实现JavaScript补全，这是重点
-Plugin 'jelera/vim-javascript-syntax'        " 增加JavaScript的高亮显示
-Plugin 'pangloss/vim-javascript'             " 语法高亮显示
-Plugin 'scrooloose/syntastic'                " 语法检查插件
-Plugin 'Raimondi/delimitMate'                " 配对符号自动补全：(),''
-Plugin 'Lokaltog/vim-powerline'              " 状态栏信息
-Plugin 'scrooloose/nerdtree'                 " 目录树
-Plugin 'Xuyuanp/nerdtree-git-plugin'         " A plugin of NERDTree showing git status flags
-Plugin 'majutsushi/tagbar'                   " 函数跳转 树~
-"Plugin 'junegunn/vim-easy-align'             " ,a=、,a:对齐
-"Plugin 'myhere/vim-nodejs-complete'         " 或许在只需要node提示的情况下可以替代tern_for_vim，尚未测试
-                                "let g:nodejs_complete_config = {
-                                "\  'js_compl_fn': 'jscomplete#CompleteJS', "这段代码会独占omnifunc，导致tern_for_vim的提示不能在ycm中自动显示
-                                "\  'max_node_compl_len': 15
-                                "\}
+Plug 'gmarik/Vundle.vim'
+Plug 'tomasr/molokai'                       " 配色方案
+Plug 'Valloric/YouCompleteMe'               " YCM安装完成之后还需要进行编译，一切的基础
+Plug 'marijnh/tern_for_vim'                 " 配合YCM实现JavaScript补全，这是重点
+Plug 'jelera/vim-javascript-syntax'         " 增加JavaScript的高亮显示
+Plug 'pangloss/vim-javascript'              " 语法高亮显示
+Plug 'scrooloose/syntastic'                 " 语法检查插件
+Plug 'Raimondi/delimitMate'                 " 配对符号自动补全：(),''
+Plug 'Lokaltog/vim-powerline'               " 状态栏信息
+Plug 'scrooloose/nerdtree'                  " 目录树
+Plug 'Xuyuanp/nerdtree-git-plugin'          " A plugin of NERDTree showing git status flags
+Plug 'majutsushi/tagbar'                    " 函数跳转 树~
+"Plug 'junegunn/vim-easy-align'             " ,a=、,a:对齐
+"Plug 'myhere/vim-nodejs-complete'          " 或许在只需要node提示的情况下可以替代tern_for_vim，尚未测试
+                                            "let g:nodejs_complete_config = {
+                                            "\  'js_compl_fn': 'jscomplete#CompleteJS', "这段代码会独占omnifunc，导致tern_for_vim的提示不能在ycm中自动显示
+                                            "\  'max_node_compl_len': 15
+                                            "\}
 
-call vundle#end()            " required
-filetype indent on                           " 许多插件生效依赖这行命令
-filetype plugin on                           " 允许插件
-filetype plugin indent on                    " 启动自动补全
+call plug#end()                             " required
+filetype indent on                          " 许多插件生效依赖这行命令
+filetype plugin on                          " 允许插件
+filetype plugin indent on                   " 启动自动补全
 
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
