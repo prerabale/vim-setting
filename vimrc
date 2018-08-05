@@ -102,7 +102,6 @@ set nocompatible                             " 自动删除不需要的插件
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'gmarik/Vundle.vim'
 Plug 'tomasr/molokai'                       " 配色方案
 Plug 'Valloric/YouCompleteMe'               " YCM安装完成之后还需要进行编译，一切的基础
 Plug 'marijnh/tern_for_vim'                 " 配合YCM实现JavaScript补全，这是重点
