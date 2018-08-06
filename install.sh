@@ -10,6 +10,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim -c 'PlugInstall' -c 'qa!' < /dev/tty || { echo "install vim plugin failure"; exit -1; }
 echo "[vim-setting]: vim plugin installed successfully!"
 
-# cp -r ~/.vim/bundle/molokai/colors ~/.vim/ || { echo "vim theme [molokai] uninstall. please install molokai first."; exit -1; }
+cp -r ~/.vim/plugged/molokai/colors ~/.vim/ || { echo "vim theme [molokai] uninstall. please install molokai first."; exit -1; }
 
 echo "[vim-setting]: install successfully. have fun!"
